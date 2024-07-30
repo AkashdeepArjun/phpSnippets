@@ -13,6 +13,32 @@ require_once './utils.php';
 
 
 
+		class Base {
+
+				
+			final function gettingData(){
+		
+				echo "<br/><h1> default method of parent";
+}
+
+
+}
+
+
+class Modern extends Base{
+
+		  
+  function gettingData(){
+
+        echo "<br/> look i overridden method ";
+
+  } 
+
+}
+
+
+
+
 
     ?>
 
