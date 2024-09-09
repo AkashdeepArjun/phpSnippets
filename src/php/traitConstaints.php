@@ -1,41 +1,45 @@
 *<html lang="en">*/
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-      </head>
-  <body>
-<?php 
-error_reporting(E_ALL);
-ini_set("display_errors",true);
 
-require_once './utils.php';
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
 
-    trait MySettings{
-      
-    public const DB_LINK="potatoes.com";
+<body>
+  <?php
+  error_reporting(E_ALL);
+  ini_set("display_errors", true);
 
-    final public const FIXED_LINK="localhost";
+  require_once './utils.php';
 
-    }
+  trait MySettings
+  {
 
-    class Test{
+    public const DB_LINK = "potatoes.com";
 
-      use MySettings;
+    final public const FIXED_LINK = "localhost";
+  }
 
-       //public const DB_LINK="resengan";
-        
-      final public const FIXED_LINK="w3schools.com";
-    }
+  class Test
+  {
 
-    $obj =new Test();
-    print_r($obj::FIXED_LINK);
+    use MySettings;
+
+    //public const DB_LINK="resengan";
+
+    /*final public const FIXED_LINK="w3schools.com";*/
+  }
+
+  $obj = new Test();
+  print_r($obj::FIXED_LINK);
 
 
 
 
-    ?>
+  ?>
 
-  
-  </body>
+
+</body>
+
 </html>

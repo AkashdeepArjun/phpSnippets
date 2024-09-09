@@ -1,28 +1,33 @@
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-      </head>
-      <body>
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors',true);
 
-require_once './myspace.php';
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
 
-/*require_once './aliens.php';*/
+<body>
+  <?php
 
-$obj = new fruit\Greet;
+  /*use plans\Greet;*/
 
-$obj->sayHi();
+  error_reporting(E_ALL);
+  ini_set('display_errors', true);
+
+  require_once './myspace.php';
+
+  /*require_once './aliens.php';*/
+
+  $obj = new plans\Greet();
+
+  $obj->sayHi();
 
 
 
 
 
 
-?>
-  </body>
+  ?>
+</body>
+
 </html>

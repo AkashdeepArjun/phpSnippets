@@ -1,35 +1,37 @@
+/*<html lang="en">*/
 
-      
-  /*<html lang="en">*/
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-      </head>
-  <body>
-<?php 
-error_reporting(E_ALL);
-ini_set("display_errors",true);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
 
-require_once './utils.php';
-  
+<body>
+  <?php
+  error_reporting(E_ALL);
+  ini_set("display_errors", true);
 
-      class OldModule{
+  require_once './utils.php';
 
 
-      
-      public function sortLogic(){
-
-        print_r("<br/> using insertion sort logic");
-      }
+  class OldModule
+  {
 
 
-      }
+
+    public function sortLogic()
+    {
+
+      print_r("<br/> using insertion sort logic");
+    }
+  }
 
 
-      trait SmartPeople{
-        
-      public function sortLogic(){
+  trait SmartPeople
+  {
+
+    public function sortLogic()
+    {
 
 
       print_r("<br/> using Logn based sort logic Quick sort that is");
@@ -37,28 +39,27 @@ require_once './utils.php';
       print_r("<br/> now calling default method for sorting");
 
       parent::sortLogic();
-      }
+    }
+  }
+
+  class NewModule extends OldModule
+  {
+
+    /*use SmartPeople;*/
+
+    use OldModule;
+  }
+
+  $test = new NewModule();
+
+  $test->sortLogic();
 
 
-      }
-
-      class NewModule extends OldModule{
-    
-        use SmartPeople;
 
 
-      }
-
-      $test = new NewModule();
-
-      $test->sortLogic();
+  ?>
 
 
+</body>
 
-
-    ?>
-
-  
-  </body>
 </html>
-

@@ -1,49 +1,49 @@
   <body>
-<?php 
-error_reporting(E_ALL);
-ini_set("display_errors",true);
+    <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", true);
 
-require_once './utils.php';
+    require_once './utils.php';
 
-        //PHP 8.1.0 STATIC INSIDE TRAIT NOT ALLOWD
-      trait Module {
+    //PHP 8.1.0 STATIC INSIDE TRAIT NOT ALLOWD
+    trait Module
+    {
 
-  
-    function logic(){
-
-      static $trail=0;
-      
-      $trail+=1;
-
-    print_r($trail);
-
-    print_r("<br/>"); 
-
-    }
-    
+      static $trail = 0;
+      function logic()
+      {
 
 
-    }
 
-    
+        self::$trail += 1;
 
-    class ModA {
+        print_r(self::$trail);
 
-    use Module;
+        print_r("<br/>");
+      }
     }
 
 
-    class ModB{
 
+    class ModA
+    {
 
-    use Module;
+      use Module;
     }
 
 
-      
+    class ModB
+    {
+
+
+      use Module;
+    }
+
+
+
     $mod_a = new ModA();
 
-    $mod_b=new ModB();
+    $mod_b = new ModB();
 
     $mod_a->logic();
 
@@ -54,6 +54,7 @@ require_once './utils.php';
 
     ?>
 
-  
+
   </body>
-</html>
+
+  </html>
